@@ -1,0 +1,24 @@
+.Root {
+
+    width: 60%;
+    height: 25%;
+    margin: 0 auto;
+    text-align: center;
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*top: 35%;*/
+    /*transform: translate(-50%, -50%);*/
+}
+
+.Logout {
+    float: right;
+}
+
+.Card {
+    width: 100%;
+    margin: 20px auto 0;
+}
+
+.Avatar {
+    width: 75px;
+}

@@ -1,0 +1,17 @@
+.Root {
+    max-width: 300px;
+    margin: 10% auto 0;
+    text-align: center;
+}
+
+.Root input, .Root button {
+    margin-top: 10px;
+}
+
+button {
+    float: right;
+}
+
+.Logo {
+    width: 200px;
+}
