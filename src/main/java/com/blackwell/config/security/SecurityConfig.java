@@ -2,10 +2,9 @@ package com.blackwell.config.security;
 
 import com.blackwell.config.jwt.JwtAuthenticationEntryPoint;
 import com.blackwell.config.jwt.JwtAuthenticationFilter;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -25,12 +24,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
         jsr250Enabled = true,
         prePostEnabled = true
 )
+@AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
     CustomUserDetailsService customUserDetailsService;
-
-    @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
 
     @Bean
@@ -73,14 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/",
                         "/auth",
                         "/favicon.ico",
-                        "/**/*.png",
-                        "/**/*.gif",
-                        "/**/*.svg",
-                        "/**/*.jpg",
-                        "/**/*.html",
-                        "/**/*.css",
-                        "/**/*.js",
-                        "/h2-console/**",
+                        "/build/bundle.js",
                         "/manifest.json")
                 .permitAll()
                 .antMatchers("/api/auth/**")
