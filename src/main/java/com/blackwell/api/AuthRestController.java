@@ -65,7 +65,7 @@ public class AuthRestController {
     private ResponseEntity<?> auth(String username, String password) {
 
         Optional<User> userOptional = userRepository.findByUsername(username);
-        if (!userOptional.isPresent())
+        if (userOptional.isEmpty())
             throw new BadCredentialsException("Username/Password is incorrect.");
 
         User user = userOptional.get();

@@ -28,7 +28,7 @@ const AuthContextProvider = props => {
         <AuthContext.Provider value={value}>
             {props.children}
         </AuthContext.Provider>
-    )
+    );
 
 };
 

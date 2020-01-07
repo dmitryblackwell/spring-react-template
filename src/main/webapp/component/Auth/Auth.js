@@ -11,6 +11,7 @@ import * as constants from '../../store/constants';
 export default function () {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
     const popoverContent = (
         <div>
             <p>username: user</p>
@@ -22,12 +23,14 @@ export default function () {
 
     const authRedirect = isAuth ? <Redirect to={"/"} /> : null;
 
-    const failedMessage = isAuthFailed ?
-        (
+    let failedMessage = null;
+    if (isAuthFailed) {
+        failedMessage = (
             <Title level={4}>
                 Wrong username/password combination!
             </Title>
-        ) : null;
+        );
+    }
 
     const onSubmit = () => {
         dispatch({

@@ -2,7 +2,7 @@
 
 ## About this project
 
-This is template for spring-react full stack application with authorization by Json Web Token (JWT).
+This is template for spring-react application with authorization by Json Web Token (JWT).
 When I was learning authorization in SPA it was difficult to find any working example. So I created my own.
 This is simple project with authorization, home page and logout.
 
@@ -24,8 +24,14 @@ git clone https://github.com/dmitryblackwell/spring-react-template.git
 cd spring-react-template
 mvnw spring-boot:run -P prod
 ```
+`-P prod` means that app is going to run under prod maven profile with maven frontend.
+This plugin automatically install node_modules and create bundle.js for website.
 
-Or just import project to your IDE and run it from there.
+If you want to run it for development purposes than you need to import it your IDE and run
+
+1. SpringReactTemplateApplication for spring web api.
+1. Webpack dev server for automatic rendering your fronted part - `npm start`.
+
 
 ## Tech Stack
 

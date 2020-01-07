@@ -1,12 +1,10 @@
 package com.blackwell.payload.response;
 
 import com.blackwell.payload.UserSummary;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @EqualsAndHashCode(callSuper = true)
-@Data
+@Getter @Setter
 public class JwtAuthenticationResponse extends AuthResponse {
     private String accessToken;
     private String tokenType = "Bearer";
