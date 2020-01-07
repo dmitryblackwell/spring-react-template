@@ -24,9 +24,9 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        test: /\.js$/,
         options: {
           presets: [
             ["@babel/preset-env", {modules: false, targets: {browsers: ['last 2 versions']}}],
@@ -35,9 +35,7 @@ module.exports = {
           cacheDirectory: true,
           plugins: [
             ['import', { libraryName: "antd", style: true }],
-            'transform-strict-mode',
-            'transform-object-rest-spread',
-            '@babel/plugin-proposal-class-properties'
+            "@babel/plugin-proposal-object-rest-spread"
           ]
         },
       },

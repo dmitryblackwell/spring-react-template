@@ -22,9 +22,7 @@ Dont forget to setup system variables.
 ```$xslt
 git clone https://github.com/dmitryblackwell/spring-react-template.git
 cd spring-react-template
-npm install
-mvnw spring-boot:run
-npm start
+mvnw spring-boot:run -P prod
 ```
 
 Or just import project to your IDE and run it from there.

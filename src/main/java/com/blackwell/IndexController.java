@@ -8,13 +8,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
-    @Value("${app.mode}")
-    private String mode;
+    @Value("${url.api}")
+    private String apiUrl;
+    @Value("${url.js}")
+    private String jsUrl;
 
     @GetMapping(value = {"/", "/dox/**", "/profile/**"})
     public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("isDevMode", "dev".equals(mode));
+        modelAndView.addObject("apiUrl", apiUrl);
+        modelAndView.addObject("jsUrl", jsUrl);
         return modelAndView;
     }
 }
